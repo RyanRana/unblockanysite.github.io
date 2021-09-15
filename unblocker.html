@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Unblocker</title>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> 
+        <link rel="favicon" href="/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" type="image/png">
+    </head>
+    <body>
+        <div class="container">
+            <br>
+            <h1 class="my-3 pb-2 border border-right-0 border-top-0 border-left-0" id="cool-header">Unblock any site with this site!</h1>
+            <div class="row">
+                <div class="col-md-4">
+                    <form class="mb-3" name="theForm" onsubmit="return doMagic()">
+                        <div class="form-group">
+                            <label for="url">URL:</label>
+                            <input type="url" class="form-control" id="url">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Go</button>
+                    </form>
+                </div>
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">FAQ</div>
+                        <div class="card-body">
+                            <p>A website that allows users to enter a URL and unblock any site there school or workplace may block. </p>
+                        <hr>
+                            <p>Q: Why is it not working?</p>
+                            <p>A: There are three possible reasons it is not working, they are the follwing</p>
+                            <ul> 1. This site won't work if your admin is smart enough to block iframes.</ul>
+                            <ul>2. This site also won't work if the site isn't including https</ul>
+                            <ul>3. The site doesn't exist</ul>
+                        <hr>
+                        <p>Built by <a href="https://www.linkedin.com/in/ryan-rana-544b761b3/">Ryan Rana</a>. Contact ryanrana04@gmail.com for questions/feedback.</p>
+                               
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row border border-right-0 border-bottom-0 border-left-0 mt-2" id="coolrow">
+            </div>
+        </div>
+        <script>
+            function doMagic() {
+                var url = document.forms["theForm"]["url"].value;
+                var str1 = '<div id="iiframe" class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="';
+                var str2 = '" allowfullscreen></iframe></div>';
+                document.getElementById("coolrow").innerHTML = str1.concat(url.concat(str2));
+                return false;
+            }
+        </script>
+    </body>
+</html>
